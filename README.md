@@ -1,105 +1,118 @@
-SmartTable – Szoftverfejlesztés és -tesztelés vizsgaremek
+# SmartTable – Szoftverfejlesztés és -tesztelés vizsgaremek
 
-SmartTable egy webes (asztali + mobilbarát) éttermi foglalási és menedzsment rendszer.
-Célja, hogy a vendégek gyorsan tudjanak éttermet keresni, idősávot választani, asztalt foglalni,
-majd értékelést írni, míg az admin felületen az üzemeltető foglalásokat kezel, statisztikákat lát,
-és tartalmat menedzsel.
+A **SmartTable** egy webes (**asztali + mobilbarát**) éttermi foglalási és menedzsment rendszer.  
+Célja, hogy a vendégek gyorsan tudjanak **éttermet keresni**, **idősávot választani**, **asztalt foglalni**, majd **értékelést írni**, míg az admin felületen az üzemeltető **foglalásokat kezel**, **statisztikákat lát**, és **tartalmat menedzsel**.
 
------------------------------------------------------------------------
+---
 
-CSAPATTAGOK ÉS AZONOSÍTÓK (commit nevek)
+## 👥 Csapattagok és azonosítók (commit nevek)
 
-A commit history-ban több alias is szerepel, de a projektet 3 fő készítette:
+A commit history-ban több alias is szerepel, de a projektet **3 fő készítette**:
 
-- Koncz Gábor Sándor – KG, kgabor016, koncz
-- Boros Róbert – BR, Carl0s69
-- Kovács Kristóf – Kristof0724, KK, kk
+- **Koncz Gábor Sándor** – `KG`, `kgabor016`, `koncz`  
+- **Boros Róbert** – `BR`, `Carl0s69`  
+- **Kovács Kristóf** – `Kristof0724`, `KK`, `kk`
 
------------------------------------------------------------------------
+---
 
-FŐ FUNKCIÓK (röviden)
+## ✅ Fő funkciók (röviden)
 
-Vendég (user)
-- Regisztráció / bejelentkezés
-- Éttermek listázása, keresése, népszerű/top listák
-- Étterem részletező: étlap, hot deals, vélemények
-- Foglalás létrehozása idősáv alapján
-- Saját foglalások listázása, módosítása/lemondása (ha engedélyezett)
-- Értékelés (1–5 csillag + szöveg), admin válasz a véleményre
+### Vendég (user)
+- Regisztráció / bejelentkezés  
+- Éttermek listázása, keresése, népszerű/top listák  
+- Étterem részletező: étlap, hot deals, vélemények  
+- Foglalás létrehozása idősáv alapján  
+- Saját foglalások listázása, módosítása/lemondása *(ha engedélyezett)*  
+- Értékelés (**1–5 csillag + szöveg**), admin válasz a véleményre  
 
-Admin
-- Admin dashboard (összesítők)
-- Foglalások listázása és státuszkezelése (pl. pending / accepted / completed)
-- Admin felület JS oldalon külön (admin.html + admin.js)
+### Admin
+- Admin dashboard (összesítők)  
+- Foglalások listázása és státuszkezelése (pl. `pending` / `accepted` / `completed`)  
+- Admin felület külön oldalon: `admin.html` + `admin.js`  
 
------------------------------------------------------------------------
+---
 
-TECHNOLÓGIÁK
+## 🧰 Technológiák
 
-- Backend: Python Flask (REST API + statikus frontend kiszolgálás)
-- Adatbázis: MySQL / MariaDB (PyMySQL)
-- Frontend: HTML + Bootstrap + JavaScript
-- Auth: session/cookie alapú (Flask session)
+- **Backend:** Python **Flask** *(REST API + statikus frontend kiszolgálás)*  
+- **Adatbázis:** **MySQL / MariaDB** *(PyMySQL)*  
+- **Frontend:** HTML + **Bootstrap** + JavaScript  
+- **Auth:** session/cookie alapú *(Flask session)*  
 
------------------------------------------------------------------------
+---
 
-PROJEKT FELÉPÍTÉSE
+## 📁 Projekt felépítése
 
+```txt
 Smarttable/
   backend_flask/
     app.py
     db.py
     requirements.txt
   frontend_web/
-    index.html, restaurants.html, restaurant.html, reservations.html, my_reservations.html
-    login.html, register.html, admin.html
+    index.html
+    restaurants.html
+    restaurant.html
+    reservations.html
+    my_reservations.html
+    login.html
+    register.html
+    admin.html
     css/style.css
     js/*.js
     assets/*
   database/
     smarttable.sql
+```
 
------------------------------------------------------------------------
+---
 
-TELEPÍTÉS ÉS FUTTATÁS (Windows / XAMPP ajánlott)
+## 🚀 Telepítés és futtatás (Windows / XAMPP ajánlott)
 
-1) Adatbázis import
-1. Indítsd el a MySQL/MariaDB szervert (pl. XAMPP).
-2. Hozz létre egy adatbázist: smarttable
-3. Importáld a dumpot:
-   - database/smarttable.sql
+### 1) Adatbázis import
+1. Indítsd el a **MySQL/MariaDB** szervert (pl. **XAMPP**).  
+2. Hozz létre egy adatbázist: `smarttable`  
+3. Importáld a dumpot: `database/smarttable.sql`  
 
-Mintafelhasználók (a dumpban):
-- Admin: admin@example.com / jelszó: admin123
-- User:  user@example.com  / jelszó: user123
+**Mintafelhasználók (a dumpban):**
+- Admin: `admin@example.com` / jelszó: `admin123`  
+- User: `user@example.com` / jelszó: `user123`  
 
-2) Backend (Flask) futtatás
-1. Nyisd meg a projektet terminálban: Smarttable/backend_flask
+### 2) Backend (Flask) futtatás
+1. Nyisd meg a projektet terminálban: `Smarttable/backend_flask`  
 2. Virtuális környezet (ajánlott):
+   ```bash
    python -m venv venv
    venv\Scripts\activate
+   ```
 3. Függőségek telepítése:
+   ```bash
    pip install -r requirements.txt
-4. Hozz létre egy .env fájlt a backend_flask mappában (példa):
-
+   ```
+4. Hozz létre egy `.env` fájlt a `backend_flask` mappában (példa):
+   ```env
    DB_HOST=localhost
    DB_USER=root
    DB_PASSWORD=
    DB_NAME=smarttable
 
+   # opcionális
    SECRET_KEY=valami_hosszu_random
    SESSION_COOKIE_SECURE=0
    PORT=5000
-
+   ```
 5. Indítás:
+   ```bash
    python app.py
+   ```
 
-3) Frontend megnyitása
-A backend a frontendet is kiszolgálja, ezért böngészőben:
-- http://localhost:5000/  (automatikusan index.html)
+### 3) Frontend megnyitása
+A backend a frontendet is kiszolgálja, ezért böngészőben nyisd meg:
 
------------------------------------------------------------------------
+- **http://localhost:5000/**  *(automatikusan index.html)*
 
-LICENC
+---
+
+## 📜 Licenc
 
 Oktatási célra készült vizsgaremek.
