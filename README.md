@@ -15,7 +15,7 @@ A commit history-ban több alias is szerepel, de a projektet **3 fő készített
 
 ---
 
-## ✅ Fő funkciók (röviden)
+## Fő funkciók (röviden)
 
 ### Vendég (user)
 - Regisztráció / bejelentkezés  
@@ -32,7 +32,7 @@ A commit history-ban több alias is szerepel, de a projektet **3 fő készített
 
 ---
 
-## 🧰 Technológiák
+## Technológiák
 
 - **Backend:** Python **Flask** *(REST API + statikus frontend kiszolgálás)*  
 - **Adatbázis:** **MySQL / MariaDB** *(PyMySQL)*  
@@ -41,7 +41,7 @@ A commit history-ban több alias is szerepel, de a projektet **3 fő készített
 
 ---
 
-## 📁 Projekt felépítése
+## Projekt felépítése
 
 ```txt
 Smarttable/
@@ -67,7 +67,7 @@ Smarttable/
 
 ---
 
-## 🚀 Telepítés és futtatás (Windows / XAMPP ajánlott)
+## Telepítés és futtatás (Windows / XAMPP ajánlott)
 
 ### 1) Adatbázis import
 1. Indítsd el a **MySQL/MariaDB** szervert (pl. **XAMPP**).  
@@ -101,6 +101,6 @@ A backend a frontendet is kiszolgálja, ezért böngészőben nyisd meg:
 
 ---
 
-## 📜 Licenc
+## Licenc
 
 Oktatási célra készült vizsgaremek.
