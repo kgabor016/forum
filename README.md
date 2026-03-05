@@ -89,19 +89,7 @@ Smarttable/
    ```bash
    pip install -r requirements.txt
    ```
-4. Hozz létre egy `.env` fájlt a `backend_flask` mappában (példa):
-   ```env
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASSWORD=
-   DB_NAME=smarttable
-
-   # opcionális
-   SECRET_KEY=valami_hosszu_random
-   SESSION_COOKIE_SECURE=0
-   PORT=5000
-   ```
-5. Indítás:
+4. Indítás:
    ```bash
    python app.py
    ```
